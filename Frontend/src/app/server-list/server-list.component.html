@@ -1,0 +1,60 @@
+<div class="main-container">
+  <div class="filters-container">
+    <div class="filter-option">
+      <label>Search by Name: </label>
+      <input>
+    </div>
+
+    <div class="filter-option">
+      Region
+      <select class="select">
+        <option>--Select Region--</option>
+        <option value="NA">NA</option>
+        <option value="EU">EU</option>
+      </select>
+    </div>
+
+    <div class="filter-option">
+      Gather Rate:
+      <select class="select">
+        <option>--Select Gather Rate--</option>
+        <option value="1">1x</option>
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+      </select>
+    </div>
+
+    <div class="filter-option">
+      Team Size Cap:
+      <select class="select">
+        <option>--Select Gather Rate--</option>
+        <option value="1">Solo</option>
+        <option value="2">Duo</option>
+        <option value="3">Trio</option>
+      </select>
+    </div>
+  </div>
+  <!-- <ul class="server-list">
+    <li *ngFor="let server of servers" class="server">
+      {{server.name}}
+    </li>
+  </ul> -->
+  <table>
+    <tr align="left">
+      <th>Server Name</th>
+      <th>Region</th>
+      <th>Gather Rate</th>
+      <th>Team Size</th>
+      <th>Next Wipe</th>
+      <th>IP Address</th>
+    </tr>
+    <tr class="table-data" *ngFor="let server of servers">
+      <td [width]="700">{{server.name}}</td>
+      <td>{{server.region}}</td>
+      <td>{{server.lootGatherRate}}X</td>
+      <td>{{getTeamSize(server.teamLimit)}}</td>
+      <td>{{server.region}}</td>
+      <td>{{server.ipAddress}}</td>
+    </tr>
+  </table>
+</div>
